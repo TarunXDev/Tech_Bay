@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+    <link href="images/favicon.png" rel="icon">
+    <title>Login & Register</title>
+    <meta name="description" content="Login and Register Form for E-commerce Website">
+    <meta name="author" content="harnishdesign.net">
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" type="text/css">
+
+    
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="enhanced.css">
+
+    
+    <link id="color-switcher" type="text/css" rel="stylesheet" href="#">
+
+    <style>
+        body {
+            font-family: 'Recursive', sans-serif;
+            color: #040404;
+        }
+
+        
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background-color: #000000; 
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        nav .logo .text-purple-700 {
+            color: #5012df;
+        }
+
+        nav .logo .text-yellow-500 {
+            color: #4e4bec;
+        }
+
+        nav .ml-1 {
+            margin-left: 0.5rem;
+        }
+
+        nav .search-bar input,
+        nav .search-bar button {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border-radius: 30px;
+        }
+
+        nav .search-bar input {
+            border: none;
+            color: #A0AEC0;
+            width: 200px;
+        }
+
+        nav .search-bar button {
+            background-color: #465bc1;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        nav .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 1.5rem;
+            padding: 0.5rem;
+        }
+
+        nav .nav-links a:hover {
+            color: #ff6f61;
+        }
+
+        nav .nav-links .fa-shopping-cart {
+            margin-left: 1.5rem;
+        }
+
+        
+        .products {
+            background-color: #fdf9f9; 
+            padding: 3rem 1rem;
+        }
+
+        .small-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .product-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .product-box {
+            width: 30%;
+            background-color: #f5f4fa;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .product-box img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-box p {
+            text-align: center;
+            padding: 1rem;
+            color: #fff;
+            font-weight: 500;
+            background-color: #72aaff;
+            margin: 0;
+        }
+
+        .product-box:hover {
+            transform: scale(1.05);
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .pagination a {
+            padding: 0.5rem 1rem;
+            background-color: #465bc1;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .pagination a:hover {
+            background-color: #3547b7;
+        }
+
+        
+        footer {
+            background-color: #222;
+            padding: 2rem 1rem;
+            text-align: center;
+            color: #fff;
+        }
+
+        footer .footer-col-1,
+        footer .footer-col-2,
+        footer .footer-col-3 {
+            margin-bottom: 1.5rem;
+        }
+
+        footer .footer-col-1 h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        footer .footer-col-2 img {
+            width: 150px;
+        }
+
+        footer .footer-col-3 h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        footer .footer-col-3 ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer .footer-col-3 ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer .footer-col-3 ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer .footer-col-3 ul li a:hover {
+            color: #A0AEC0;
+        }
+
+        @media (max-width: 768px) {
+            .product-box {
+                width: 45%;
+            }
+
+            .pagination {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-box {
+                width: 100%;
+            }
+
+            .title {
+                font-size: 2rem;
+            }
+
+        
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <div class="text-purple-700">TECH</div>
+            <div class="text-yellow-500">BAY</div>
+            <div class="ml-1 text-yellow-500"><i class="fas fa-tag"></i></div>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products...">
+            <button>Search</button>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="abouttk.html">About</a>
+            <a href="contacttk.html">Contact</a>
+            <a href="checkout.html">Payment</a>
+            <a href="register.html">Account</a>
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </nav>
+</head>
+
+<body>
+    <div id="main-wrapper" class="oxyy-login-register">
+        <div class="container-fluid px-0">
+            <div class="row no-gutters min-vh-100">
+
+               
+                <div class="col-md-6 d-flex flex-column align-items-center order-2 order-md-1">
+                    <div class="container pt-5">
+                        <div class="row">
+                            <div class="col-11 col-md-10 mx-auto">
+                                
+                                
+                                <ul class="nav nav-tabs" id="authTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="signInTab" data-toggle="tab" href="#signIn" role="tab" aria-controls="signIn" aria-selected="true">Sign In</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="signUpTab" data-toggle="tab" href="#signUp" role="tab" aria-controls="signUp" aria-selected="false">Sign Up</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container my-auto py-5">
+                        <div class="row">
+                            <div class="col-11 col-md-10 col-lg-9 col-xl-8 mx-auto">
+                                <div class="tab-content" id="authTabContent">
+                                   
+                                    
+                                    <div class="tab-pane fade show active" id="signIn" role="tabpanel" aria-labelledby="signInTab">
+                                        <h3 class="font-weight-300 text-9 mb-5">Sign In</h3>
+                                        <form id="loginForm" method="post" action="signin.php">
+                                            <div class="form-group font-weight-300">
+                                                <label for="emailAddress">Email Address</label>
+                                                <input type="email" class="form-control bg-light" id="emailAddress" required="" placeholder="Enter Your Email">
+                                            </div>
+                                            <div class="form-group font-weight-300">
+                                                <label for="loginPassword">Password</label>
+                                                <input type="password" class="form-control bg-light" id="loginPassword" required="" placeholder="Enter Password">
+                                            </div>
+                                            <div class="form-group font-weight-300 mt-4">
+                                                <div class="form-check text-2 custom-control custom-checkbox">
+                                                    <input id="rememberMe" name="rememberMe" class="custom-control-input" type="checkbox">
+                                                    <label class="custom-control-label" for="rememberMe">Remember Me</label>
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-dark btn-block shadow-none font-weight-400 my-4" type="submit">Sign In</button>
+                                        </form>
+                                        <p class="text-right text-2 text-muted font-weight-300">Not a member? <a class="btn-link font-weight-300" href="#">Sign up now</a></p>
+                                    </div>
+
+                                    
+                                    
+                                    <div class="tab-pane fade" id="signUp" role="tabpanel" aria-labelledby="signUpTab">
+                                        <h3 class="font-weight-300 text-9 mb-5">Sign Up</h3>
+                                        <form id="registerForm" method="post" action="signup.php">
+                                            <div class="form-group font-weight-300">
+                                                <label for="fullName">Full Name</label>
+                                                <input type="text" class="form-control bg-light" id="fullName" name="fullName" required="" placeholder="Enter Your Name">
+                                            </div>
+                                            <div class="form-group font-weight-300">
+                                                <label for="emailAddress">Email Address</label>
+                                                <input type="email" class="form-control bg-light" id="emailAddress" name="emailAddress" required="" placeholder="Enter Your Email">
+                                            </div>
+                                            <div class="form-group font-weight-300">
+                                                <label for="passWord">Password</label>
+                                                <input type="password" class="form-control bg-light" id="loginPassword" name="passWord" required="" placeholder="Enter Password">
+                                            </div>
+                                            <div class="form-group font-weight-300 mt-4">
+                                                <div class="form-check text-2 custom-control custom-checkbox">
+                                                    <input id="agree" name="agree" class="custom-control-input" type="checkbox">
+                                                    <label class="custom-control-label" for="agree">I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.</label>
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-dark btn-block shadow-none font-weight-400 my-4" type="submit">Sign Up</button>
+                                        </form>
+                                        <p class="text-right text-2 text-muted font-weight-300">Already a member? <a class="btn-link font-weight-300" href="#">Sign in now</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                
+                <div class="col-md-6 bg-dark order-1 order-md-2">
+                    <div class="container h-100 d-flex flex-column">
+                        <div class="row no-gutters">
+                            <div class="col-11 col-md-10 mx-auto">
+                                <div class="logo mt-5 mb-5 mb-md-0"> <a class="d-flex" href="index.html" title="Oxyy"><img src="images/logo.png" alt="Oxyy"></a> </div>
+                            </div>
+                        </div>
+                        <div class="row no-gutters my-auto">
+                            <div class="col-11 col-md-10 mx-auto">
+                                <h1 class="text-13 font-weight-400 mb-4 text-light">Best Deals, Best Prices, Fast Delivery</h1>
+                                <p style="color: #cecece;">Consoles, Games, Accessories, Electronics, Phones</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

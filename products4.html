@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Recursive', sans-serif;
+            color: #040404;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background-color: #000000; 
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        nav .logo .text-purple-700 {
+            color: #5012df;
+        }
+
+        nav .logo .text-yellow-500 {
+            color: #4e4bec;
+        }
+
+        nav .ml-1 {
+            margin-left: 0.5rem;
+        }
+
+        nav .search-bar input,
+        nav .search-bar button {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border-radius: 30px;
+        }
+
+        nav .search-bar input {
+            border: none;
+            color: #A0AEC0;
+            width: 200px;
+        }
+
+        nav .search-bar button {
+            background-color: #465bc1;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        nav .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 1.5rem;
+            padding: 0.5rem;
+        }
+
+        nav .nav-links a:hover {
+            color: #ff6f61;
+        }
+
+        nav .nav-links .fa-shopping-cart {
+            margin-left: 1.5rem;
+        }
+
+        /* Product section */
+        .products {
+            background-color: #fdf9f9; 
+            padding: 3rem 1rem;
+        }
+
+        .small-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .product-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .product-box {
+            width: 30%;
+            background-color: #000409;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .product-box img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-box p {
+            text-align: center;
+            padding: 1rem;
+            color: #fff;
+            font-weight: 500;
+            background-color: #72aaff;
+            margin: 0;
+        }
+
+        .product-box:hover {
+            transform: scale(1.05);
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .pagination a {
+            padding: 0.5rem 1rem;
+            background-color: #465bc1;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .pagination a:hover {
+            background-color: #3547b7;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            padding: 2rem 1rem;
+            text-align: center;
+            color: #fff;
+        }
+
+        footer .footer-col-1,
+        footer .footer-col-2,
+        footer .footer-col-3 {
+            margin-bottom: 1.5rem;
+        }
+
+        footer .footer-col-1 h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        footer .footer-col-2 img {
+            width: 150px;
+        }
+
+        footer .footer-col-3 h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        footer .footer-col-3 ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer .footer-col-3 ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer .footer-col-3 ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer .footer-col-3 ul li a:hover {
+            color: #4346f1;
+        }
+
+        @media (max-width: 768px) {
+            .product-box {
+                width: 45%;
+            }
+
+            .pagination {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-box {
+                width: 100%;
+            }
+
+            .title {
+                font-size: 2rem;
+            }
+
+        
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <div class="text-purple-700">TECH</div>
+            <div class="text-yellow-500">BAY</div>
+            <div class="ml-1 text-yellow-500"><i class="fas fa-tag"></i></div>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products...">
+            <button>Search</button>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="abouttk.html">About</a>
+            <a href="contacttk.html">Contact</a>
+            <a href="checkout.html">Payment</a>
+            <a href="register.html">Account</a>
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </nav>
+
+    <div class="products">
+        <div class="small-container">
+            <h2 class="title">Exclusive (Limited)</h2>
+            <div class="product-row">
+                <div class="product-box">
+                    <a href="product1.html">
+                        <img src="https://images-cdn.ubuy.co.in/64fc6be7b364f012f44a8d39-sony-playstation-5-video-game-console.jpg">
+                        <p>Sony PS5 Disc Console </p>
+                    </a>
+                </div>
+
+                <div class="product-box">
+                    <a href="product2.html">
+                        <img src="https://hips.hearstapps.com/hmg-prod/images/best-gadgets-64aeb579d3267.png?crop=1xw:1xh;center,top&resize=980:*">
+                        <p>Nothing 2A</p>
+                    </a>
+                </div>
+
+                <div class="product-box">
+                    <a href="product3.html">
+                        <img src="https://m.media-amazon.com/images/I/31dFmBXJC3L._SL500_.jpg">
+                        <p>AMD Ryzen 7 9800X 3D Processor</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <div class="product-box">
+                    <a href="product4.html">
+                        <img src="https://image-us.samsung.com/SamsungUS/home/televisions-and-home-theater/tvs/qled-tvs/pdp/qn49q6famfxza/gallery/2Q6F.jpg?$product-details-jpg$">
+                        <p>Samsung 49" Class Q6F QLED 4K TV</p>
+                    </a>
+                </div>
+
+                <div class="product-box">
+                    <a href="product5.html">
+                        <img src="https://static.independent.co.uk/2024/01/12/12/rabbit%20r1%20.jpg">
+                        <p>Rabbit R1 Hyper AI</p>
+                    </a>
+                </div>
+
+                <div class="product-box">
+                    <a href="product6.html">
+                        <img src="https://images-cdn.ubuy.co.in/653a61c7ccdb7e75d848f946-emo-smart-ai-interactive-desktop-pet.jpg">
+                        <p> EMO Smart AI Pet Robot </p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <a href="products.html">1</a>
+                <a href="products2.html">2</a>
+                <a href="products3.html">3</a>
+                <a href="products4.html">4</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-col-1">
+            <h3>About TECHBAY</h3>
+            <p>We provide cutting-edge tech products and services.</p>
+        </div>
+
+        <div class="footer-col-2">
+            <h3>Our Store</h3>
+            <img src="https://via.placeholder.com/150" alt="Store Logo">
+        </div>
+
+        <div class="footer-col-3">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="abouttk.html">About</a></li>
+                <li><a href="contacttk.html">Contact</a></li>
+                <li><a href="checkout.html">Payment</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+
+</html>

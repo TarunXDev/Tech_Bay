@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page - SmartFit Pro Max</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            display: flex;
+            gap: 2rem;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .product-image {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        .product-details h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-details p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #28a745;
+            margin-bottom: 1.5rem;
+        }
+
+        .rating {
+            margin-bottom: 1.5rem;
+        }
+
+        .rating i {
+            color: gold;
+            margin-right: 0.3rem;
+        }
+
+        .rating span {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .actions {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .actions button {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .btn-cart {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-cart:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-pay-now {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-pay-now:hover {
+            background-color: #218838;
+        }
+
+        .description {
+            margin-top: 2rem;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        .description h3 {
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #222;
+            color: #fff;
+            margin-top: 2rem;
+        }
+    </style>
+
+<style>
+    body {
+        font-family: 'Recursive', sans-serif;
+        color: #040404;
+    }
+
+    
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        background-color: #000000; 
+    }
+
+    nav .logo {
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    nav .logo .text-purple-700 {
+        color: #5012df;
+    }
+
+    nav .logo .text-yellow-500 {
+        color: #4e4bec;
+    }
+
+    nav .ml-1 {
+        margin-left: 0.5rem;
+    }
+
+    nav .search-bar input,
+    nav .search-bar button {
+        padding: 0.5rem;
+        font-size: 1rem;
+        border-radius: 30px;
+    }
+
+    nav .search-bar input {
+        border: none;
+        color: #A0AEC0;
+        width: 200px;
+    }
+
+    nav .search-bar button {
+        background-color: #465bc1;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    nav .nav-links {
+        display: flex;
+        align-items: center;
+    }
+
+    nav .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        margin-right: 1.5rem;
+        padding: 0.5rem;
+    }
+
+    nav .nav-links a:hover {
+        color: #ff6f61;
+    }
+
+    nav .nav-links .fa-shopping-cart {
+        margin-left: 1.5rem;
+    }
+
+    
+    .products {
+        background-color: #fdf9f9; 
+        padding: 3rem 1rem;
+    }
+
+    .small-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+    }
+
+    .product-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .product-box {
+        width: 30%;
+        background-color: #f5f4fa;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+
+    .product-box img {
+        width: 100%;
+        height: auto;
+    }
+
+    .product-box p {
+        text-align: center;
+        padding: 1rem;
+        color: #fff;
+        font-weight: 500;
+        background-color: #72aaff;
+        margin: 0;
+    }
+
+    .product-box:hover {
+        transform: scale(1.05);
+    }
+
+    
+    .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .pagination a {
+        padding: 0.5rem 1rem;
+        background-color: #465bc1;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    .pagination a:hover {
+        background-color: #3547b7;
+    }
+
+   
+    footer {
+        background-color: #222;
+        padding: 2rem 1rem;
+        text-align: center;
+        color: #fff;
+    }
+
+    footer .footer-col-1,
+    footer .footer-col-2,
+    footer .footer-col-3 {
+        margin-bottom: 1.5rem;
+    }
+
+    footer .footer-col-1 h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    footer .footer-col-2 img {
+        width: 150px;
+    }
+
+    footer .footer-col-3 h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    footer .footer-col-3 ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    footer .footer-col-3 ul li {
+        margin-bottom: 0.5rem;
+    }
+
+    footer .footer-col-3 ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    footer .footer-col-3 ul li a:hover {
+        color: #A0AEC0;
+    }
+
+    @media (max-width: 768px) {
+        .product-box {
+            width: 45%;
+        }
+
+        .pagination {
+            flex-direction: column;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .product-box {
+            width: 100%;
+        }
+
+        .title {
+            font-size: 2rem;
+        }
+    }
+</style>
+</head>
+
+<body>
+<nav>
+    <div class="logo">
+        <div class="text-purple-700">TECH</div>
+        <div class="text-yellow-500">BAY</div>
+        <div class="ml-1 text-yellow-500"><i class="fas fa-tag"></i></div>
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Search for products...">
+        <button>Search</button>
+    </div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="abouttk.html">About</a>
+        <a href="contacttk.html">Contact</a>
+        <a href="checkout.html">Payment</a>
+        <a href="register.html">Account</a>
+        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+</nav>
+
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page - MacBook Pro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            display: flex;
+            gap: 2rem;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .product-image {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        .product-details h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-details p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #28a745;
+            margin-bottom: 1.5rem;
+        }
+
+        .rating {
+            margin-bottom: 1.5rem;
+        }
+
+        .rating i {
+            color: gold;
+            margin-right: 0.3rem;
+        }
+
+        .rating span {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .actions {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .actions button {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .btn-cart {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-cart:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-pay-now {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-pay-now:hover {
+            background-color: #218838;
+        }
+
+        .description {
+            margin-top: 2rem;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        .description h3 {
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #222;
+            color: #fff;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Product Image -->
+        <div class="product-image">
+            <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/macbookair-og-202402?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1707414684423" alt="MacBook Pro">
+        </div>
+
+        <!-- Product Details -->
+        <div class="product-details">
+            <h1>MacBook Pro</h1>
+            <p>The Apple MacBook Pro combines unparalleled performance, an immersive display, and cutting-edge technology, making it the ultimate tool for professionals and creators alike. Power through tasks with the M2 chip, featuring improved speed and efficiency in a sleek, durable design.</p>
+
+            <div class="price">₹1,99,999</div>
+
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+                <span>(4.7/5 based on 12,345 reviews)</span>
+            </div>
+
+            <div class="actions">
+                <button class="btn-cart">Add to Cart</button>
+                <button class="btn-pay-now">Buy Now</button>
+            </div>
+
+            <div class="description">
+                <h3>Product Description</h3>
+                <p>The MacBook Pro is designed to empower your creativity and productivity with cutting-edge features and world-class performance. From video editing to software development, this laptop delivers unmatched reliability and speed for any task.</p>
+
+                <ul>
+                    <li>Apple M2 chip with 10-core GPU for faster processing</li>
+                    <li>16GB unified memory and 512GB SSD storage</li>
+                    <li>Liquid Retina XDR display with 1,000 nits of brightness</li>
+                    <li>16-core Neural Engine for advanced machine learning</li>
+                    <li>All-day battery life of up to 20 hours</li>
+                    <li>macOS Sonoma with powerful productivity features</li>
+                    <li>Thunderbolt 4 ports for ultra-fast connectivity</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 TechStore. All Rights Reserved.
+    </footer>
+
+</body>
+
+</html>
+
